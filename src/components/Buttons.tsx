@@ -9,7 +9,7 @@ type ButtonsType = {
 const Buttons: FunctionComponent<ButtonsType> = ({ onClose }) => {
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
-      "[data-animate-on-scroll]"
+      "[data-animate-on-scroll]",
     );
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,7 +23,7 @@ const Buttons: FunctionComponent<ButtonsType> = ({ onClose }) => {
       },
       {
         threshold: 0.15,
-      }
+      },
     );
 
     for (let i = 0; i < scrollAnimElements.length; i++) {

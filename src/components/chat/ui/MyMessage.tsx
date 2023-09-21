@@ -1,6 +1,6 @@
 import { FunctionComponent, useState, useRef, useCallback } from "react";
 import EditDeleteMessage from "./EditDeleteMessage";
-import PortalPopup from "./PortalPopup";
+import PortalPopup from "../../PortalPopup";
 
 const MyMessage: FunctionComponent = () => {
   const editDeleteButtonRef = useRef<HTMLButtonElement>(null);

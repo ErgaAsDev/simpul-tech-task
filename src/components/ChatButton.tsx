@@ -1,5 +1,5 @@
 import { FunctionComponent, useState, useRef, useCallback } from "react";
-import InboxMessages from "./InboxMessages";
+import InboxMessages from "./chat/Inbox";
 import PortalPopup from "./PortalPopup";
 
 const ChatButton: FunctionComponent = () => {
@@ -21,11 +21,21 @@ const ChatButton: FunctionComponent = () => {
         ref={groupButton1Ref}
         onClick={openInboxMessagesPopup}
       >
-        <img
-          className="absolute top-[0px] left-[0px] w-[60px] h-[60px]"
-          alt=""
-          src="/group-1661.svg"
-        />
+        <div
+          className={`absolute flex top-[0px] left-[0px] w-[60px] h-[60px] ${
+            isInboxMessagesPopupOpen ? "bg-[#8785FF]" : "bg-white"
+          } rounded-[50%] items-center justify-center`}
+        >
+          <img
+            src={`${
+              isInboxMessagesPopupOpen
+                ? "/chat-active-icon.png"
+                : "/chat-icon.png"
+            }`}
+            alt="task"
+            className="w-[26px] h-[26px]"
+          />
+        </div>
       </button>
       {isInboxMessagesPopupOpen && (
         <PortalPopup

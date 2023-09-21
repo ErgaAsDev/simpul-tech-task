@@ -1,0 +1,16 @@
+# Ignore compiled files
+*.class
+*.jar
+
+# Ignore build output directories
+target/
+build/
+
+# Ignore log files
+*.log
+
+# Ignore environment-specific configuration files
+config/local.json
+
+# Ignore Node.js modules
+node_modules/

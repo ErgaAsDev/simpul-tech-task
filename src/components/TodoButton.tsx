@@ -1,5 +1,5 @@
 import { FunctionComponent, useState, useRef, useCallback } from "react";
-import Todos from "./Todos";
+import Todos from "./todo/Todos";
 import PortalPopup from "./PortalPopup";
 
 const TodoButton: FunctionComponent = () => {
@@ -21,11 +21,19 @@ const TodoButton: FunctionComponent = () => {
         ref={groupButtonRef}
         onClick={openTodosPopup}
       >
-        <img
-          className="absolute top-[0px] left-[0px] w-[60px] h-[60px]"
-          alt=""
-          src="/group-1662.svg"
-        />
+        <div
+          className={`absolute flex top-[0px] left-[0px] w-[60px] h-[60px] ${
+            isTodosPopupOpen ? "bg-[#F8B76B]" : "bg-white"
+          } rounded-[50%] items-center justify-center`}
+        >
+          <img
+            src={`${
+              isTodosPopupOpen ? "/task-active-icon.png" : "/task-icon.png"
+            }`}
+            alt="task"
+            className="w-[24px] h-[18px]"
+          />
+        </div>
       </button>
       {isTodosPopupOpen && (
         <PortalPopup

@@ -1,6 +1,6 @@
 import { FunctionComponent, useState, useRef, useCallback } from "react";
 import ReplyShareMessage from "./ReplyShareMessage";
-import PortalPopup from "./PortalPopup";
+import PortalPopup from "../../PortalPopup";
 
 const OtherMessage: FunctionComponent = () => {
   const replyShareButtonRef = useRef<HTMLButtonElement>(null);

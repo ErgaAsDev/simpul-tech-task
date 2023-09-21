@@ -1,10 +1,10 @@
 import { FunctionComponent, useState, useRef, useCallback } from "react";
-import EditDeleteMessage from "./EditDeleteMessage";
-import PortalPopup from "./PortalPopup";
-import ReplyShareMessage from "./ReplyShareMessage";
-import MyMessage from "./MyMessage";
+import EditDeleteMessage from "./ui/EditDeleteMessage";
+import PortalPopup from "../PortalPopup";
+import ReplyShareMessage from "./ui/ReplyShareMessage";
+import MyMessage from "./ui/MyMessage";
 import ChatDate from "./ChatDate";
-import OtherMessage from "./OtherMessage";
+import OtherMessage from "./ui/OtherMessage";
 
 const ChatContainer: FunctionComponent = () => {
   const editDeleteButton1Ref = useRef<HTMLButtonElement>(null);

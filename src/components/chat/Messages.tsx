@@ -1,7 +1,7 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import MessageContainer from "./MessageContainer";
-import PortalPopup from "./PortalPopup";
-import GroupChatIcon from "./GroupChatIcon";
+import PortalPopup from "../PortalPopup";
+import GroupChatIcon from "./ui/GroupChatIcon";
 import ChatInformation from "./ChatInformation";
 
 const Messages: FunctionComponent = () => {

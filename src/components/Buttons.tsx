@@ -37,7 +37,7 @@ const Buttons: FunctionComponent<ButtonsType> = ({ onClose }) => {
     };
   }, []);
   return (
-    <div className="relative flex flex-row items-start justify-start gap-[24px] overflow-hidden max-w-full max-h-full text-left text-sm text-white font-inter">
+    <div className="relative flex flex-row items-start justify-start gap-[24px] max-w-full max-h-full text-left text-sm text-white font-inter">
       <div
         className="flex flex-col items-center justify-start gap-[14px] [&.animate]:animate-[0.3s_ease_0.1s_1_normal_forwards_slide-in-bottom] opacity-[0]"
         data-animate-on-scroll

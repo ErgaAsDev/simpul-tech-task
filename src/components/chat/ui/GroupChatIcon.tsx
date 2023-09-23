@@ -1,8 +1,11 @@
 import { FunctionComponent } from "react";
+import { ChatTypes } from "../../../types/chatTypes";
 
-const GroupChatIcon: FunctionComponent = () => {
+const GroupChatIcon: FunctionComponent<ChatTypes> = ({ name }) => {
   return (
-    <img className="relative w-[51px] h-[34px]" alt="" src="/groupchat.svg" />
+    <div className="relative w-[50px] h-[50px] bg-[#2F80ED] rounded-[50%] text-white flex items-center justify-center">
+      {name.charAt(0)}
+    </div>
   );
 };
 

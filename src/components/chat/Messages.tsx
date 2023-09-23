@@ -34,7 +34,7 @@ const Messages: FunctionComponent<ChatTypes> = (props) => {
             className="[text-decoration:none] flex flex-row items-start justify-start gap-[17px] cursor-pointer text-[inherit]"
             onClick={() => handleOpenMessageClick(props.id)}
           >
-            <GroupChatIcon />
+            <GroupChatIcon {...props} />
             <ChatInformation {...props} />
           </a>
           <img

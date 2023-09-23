@@ -50,7 +50,7 @@ const TodoSticker: React.FC<TodoProps> = ({ hasStickers, id }: TodoProps) => {
         ref={stickerRef}
         onClick={openStickersPopup}
       >
-        <div className="flex flex-row py-2 pr-0 pl-3 items-start justify-start gap-[19px]">
+        <div className="flex flex-row py-3 pr-0 pl-3 items-center justify-start gap-[19px]">
           <img
             className="relative w-[14.17px] h-[18.33px]"
             alt=""
@@ -60,7 +60,7 @@ const TodoSticker: React.FC<TodoProps> = ({ hasStickers, id }: TodoProps) => {
             <div className="flex gap-1">
               {pickedStickers.map((sticker) => (
                 <div
-                  className={`${sticker.color} px-2 rounded`}
+                  className={`${sticker.color} px-2 py-1 rounded`}
                   key={sticker.id}
                 >
                   {sticker.sticker}

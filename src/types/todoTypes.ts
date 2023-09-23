@@ -8,5 +8,5 @@ export interface TodoProps {
   deleteTaskPopup?: boolean;
   taskOpen?: boolean;
   dateTask?: string;
-  hasStickers?: string[];
+  hasStickers?: any[];
 }

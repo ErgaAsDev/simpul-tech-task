@@ -1,9 +1,7 @@
-import { useState } from "react";
-
 interface StickersProps {
   stickers: any;
   id: number;
-  pickedStickers: any[];
+  pickedStickers: any[] | undefined;
   handleAddStickers: any;
   dataStickers: any[];
 }
@@ -24,10 +22,11 @@ const Stickers: React.FC<StickersProps> = ({
             id={data.id.toString()}
             onClick={handleAddStickers}
             className={`cursor-pointer ${
+              pickedStickers &&
               pickedStickers.some(
                 (pickedSticker) => pickedSticker.id === data.id,
               )
-                ? "border border-blue"
+                ? "border border-[#2F80ED]"
                 : ""
             } py-[5px] pr-0 pl-2 ${
               data.color

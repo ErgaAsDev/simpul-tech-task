@@ -1,10 +1,13 @@
 import { FunctionComponent, useState, useRef, useCallback } from "react";
-import InboxMessages from "./chat/Inbox";
+import Inbox from "./chat/Inbox";
 import PortalPopup from "./PortalPopup";
+import { useDispatch } from "react-redux";
+import { handleCloseMessage } from "../slices/chatSlice";
 
 const ChatButton: FunctionComponent = () => {
   const groupButton1Ref = useRef<HTMLButtonElement>(null);
   const [isInboxMessagesPopupOpen, setInboxMessagesPopupOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const openInboxMessagesPopup = useCallback(() => {
     setInboxMessagesPopupOpen(true);
@@ -12,6 +15,7 @@ const ChatButton: FunctionComponent = () => {
 
   const closeInboxMessagesPopup = useCallback(() => {
     setInboxMessagesPopupOpen(false);
+    dispatch(handleCloseMessage());
   }, []);
 
   return (
@@ -45,7 +49,7 @@ const ChatButton: FunctionComponent = () => {
           relativeLayerRef={groupButton1Ref}
           onOutsideClick={closeInboxMessagesPopup}
         >
-          <InboxMessages onClose={closeInboxMessagesPopup} />
+          <Inbox />
         </PortalPopup>
       )}
     </>

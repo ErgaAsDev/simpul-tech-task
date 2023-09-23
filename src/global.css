@@ -44,3 +44,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(110, 109, 109);
 }
+
+.button-slide {
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.button-slide.active {
+  transform: translateX(
+    30px
+  ); /* Adjust this value to control the amount of translation */
+}

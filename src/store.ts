@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from "./slices/todoSlice";
-import chatReducer from "./slices/todoSlice";
+import chatReducer from "./slices/chatSlice";
 
 export const store = configureStore({
   reducer: {

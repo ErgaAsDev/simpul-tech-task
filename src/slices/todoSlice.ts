@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { getPost } from "../api/todoApi";
+import { dataStickers } from "../helpers/stickerData";
 
 interface TodoState {
   addNewTitleTodo: boolean;
@@ -97,7 +98,36 @@ export const todoSlice = createSlice({
       // }
       state.newTodo.posts.unshift(newTask);
     },
-    addStickers: (state, action) => {},
+    addStickers: (state, action) => {
+      const { postId, sticker } = action.payload;
+
+      // Find the post with the matching postId
+      const postIndex = state.newTodo.posts.findIndex(
+        (post) => post.id === postId,
+      );
+
+      if (postIndex !== -1) {
+        const updatedPost = { ...state.newTodo.posts[postIndex] };
+
+        // Check if the sticker is already in the hasStickers array
+        const isStickerInHasStickers = updatedPost.hasStickers.some(
+          (s: any) => s.id === sticker.id,
+        );
+
+        if (isStickerInHasStickers) {
+          // Remove the sticker if it's already in the array
+          updatedPost.hasStickers = updatedPost.hasStickers.filter(
+            (s: any) => s.id !== sticker.id,
+          );
+        } else {
+          // Add the sticker if it's not in the array
+          updatedPost.hasStickers = [...updatedPost.hasStickers, sticker];
+        }
+
+        // Update the state with the modified post
+        state.newTodo.posts[postIndex] = updatedPost;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -132,5 +162,6 @@ export const {
   handleOnKeyDown,
   deleteTaskItem,
   addTaskItem,
+  addStickers,
 } = todoSlice.actions;
 export default todoSlice.reducer;
